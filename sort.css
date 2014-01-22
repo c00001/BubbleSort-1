@@ -1,0 +1,15 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+div {
+	background: rgb(22, 160, 133);
+	position: absolute;
+	height: 100%;
+}
+.compare {
+	background: rgb(26, 188, 156);
+}
+.move {
+	background: rgb(26, 188, 156);
+}
