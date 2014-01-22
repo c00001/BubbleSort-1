@@ -8,6 +8,12 @@ function getQueryStringByName(name){
 }
 var interval = getQueryStringByName("interval");
 var number = getQueryStringByName("number");
+if (interval == ""){
+	interval = 300;
+}
+if (number == ""){
+	number = 30;
+}
 // main
 var array = [],
 	step = [],
