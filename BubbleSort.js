@@ -1,6 +1,8 @@
+// var
+var interval = 300;
+var len = 30;
 // main
 var array = [],
-	len = 10,
 	step = [],
 	stepN = 0,
 	a = [];
@@ -28,7 +30,6 @@ for (var i=0;i<a.length-1;i++){
 	}
 }
 // css
-var interval = 300;
 var getCssName = function(name){
 	var prefixes = ['', '-webkit-', '-ms-','-moz-', '-khtml-', '-o-'];
 	target = document.documentElement.style;
