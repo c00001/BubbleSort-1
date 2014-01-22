@@ -38,9 +38,13 @@ var addCss = function (sheet, selectorText, cssText, position) {
 	}
 };
 addCss(css,"div","width: "+(100/len)+"%");
+for (var i=0;i<len;i++){
+	addCss(css,".div"+i,"height: "+(100*array[i])+"%");
+}
 // animate
 var div = [];
 for (var i=0;i<len;i++){
 	div[i] = document.createElement("div");
+	div[i].classList.add("div"+i);
 	document.body.appendChild(div[i]);
 }
