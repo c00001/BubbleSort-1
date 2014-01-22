@@ -1,12 +1,19 @@
 // var
-var interval = 300;
-var len = 30;
+function getQueryStringByName(name){
+	var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+	if(result == null || result.length < 1){
+		return "";
+	}
+	return result[1];
+}
+var interval = getQueryStringByName("interval");
+var number = getQueryStringByName("number");
 // main
 var array = [],
 	step = [],
 	stepN = 0,
 	a = [];
-for (var i=0;i<len;i++){
+for (var i=0;i<number;i++){
 	array[i] = Math.random();
 	a[i] = array[i];
 }
@@ -51,16 +58,16 @@ var addCss = function (sheet, selectorText, cssText, position) {
 		sheet.addRule(selectorText, cssText, pos);
 	}
 };
-addCss(css,"div","width: "+100/len+"%; "+transition+": background "+interval/1000+"s, left "+interval/1000+"s;");
-for (var i=0;i<len;i++){
+addCss(css,"div","width: "+100/number+"%; "+transition+": background "+interval/1000+"s, left "+interval/1000+"s;");
+for (var i=0;i<number;i++){
 	addCss(css,".div"+i,"height: "+100*array[i]+"%; top: "+100*(1-array[i])+"%;");
 }
 // create div
 var div = [];
-for (var i=0;i<len;i++){
+for (var i=0;i<number;i++){
 	div[i] = document.createElement("div");
 	div[i].classList.add("div"+i);
-	div[i].style.left = 100/len*i+"%";
+	div[i].style.left = 100/number*i+"%";
 	document.body.appendChild(div[i]);
 }
 // animate
